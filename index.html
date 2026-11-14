@@ -330,52 +330,6 @@
       }
     }
 
-    /* Form fields */
-    .field {
-      width: 100%;
-      background-color: var(--surface);
-      border: 1px solid var(--rule);
-      border-radius: var(--radius);
-      padding: 0.6875rem 0.875rem;
-      font-size: 15px;
-      line-height: 1.45;
-      color: var(--ink);
-      transition: border-color 0.15s ease, box-shadow 0.15s ease;
-    }
-    .field::placeholder {
-      color: var(--ink-3);
-      opacity: 0.8;
-    }
-    .field:hover {
-      border-color: var(--rule-strong);
-    }
-    .field:focus {
-      outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px var(--accent-tint);
-    }
-    select.field {
-      -webkit-appearance: none;
-      appearance: none;
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' fill='none' stroke='%234E5D55' stroke-width='1.4'/></svg>");
-      background-repeat: no-repeat;
-      background-position: right 0.875rem center;
-      padding-right: 2.25rem;
-      cursor: pointer;
-    }
-    .field-label {
-      display: block;
-      margin-bottom: 0.4rem;
-      font-size: 0.6875rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--ink-2);
-    }
-    .check-accent {
-      accent-color: var(--accent);
-    }
-
     /* Copy-to-clipboard state */
     .copy-btn.is-copied {
       background-color: var(--sig-ink);
@@ -457,7 +411,7 @@
         <!-- Primary CTA -->
         <button
           type="button"
-          onclick="openBookingModal('scoping')"
+          onclick="openBooking()"
           data-i18n="nav.cta"
           class="hidden sm:inline-flex btn btn-primary btn-sm justify-center"
         >
@@ -533,7 +487,7 @@
         </ol>
         <button
           type="button"
-          onclick="closeMobileMenu(); openBookingModal('scoping');"
+          onclick="closeMobileMenu(); openBooking();"
           data-i18n="nav.cta"
           class="mt-4 w-full btn btn-primary justify-center"
         >
@@ -563,11 +517,11 @@
             Direct, senior-level tax execution for international founders, remote professionals, and cross-border corporate groups operating in Spain and the EU. No junior handoffs. No bureaucratic guesswork.
           </p>
           <div class="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
-            <button type="button" onclick="openBookingModal('scoping')" class="btn btn-primary justify-center">
+            <button type="button" onclick="openBooking()" class="btn btn-primary justify-center">
               <span data-i18n="nav.cta">Book a Consultation</span>
               <span class="arrow" aria-hidden="true">→</span>
             </button>
-            <a href="mailto:nikita@gritsuktax.com" class="link-quiet text-[15px] text-ink">nikita@gritsuktax.com</a>
+            <a href="mailto:nikita.gritsuk@outlook.com" class="link-quiet text-[15px] text-ink">nikita.gritsuk@outlook.com</a>
           </div>
         </div>
 
@@ -1003,7 +957,7 @@
             <p data-i18n="sec4.t1.body" class="t-small mt-5 text-ink2 hyphenate flex-1">
               Comprehensive review of your current tax residency, autónomo/SL structure, or cross-border compliance risks, followed by a written action roadmap. (Credited toward ongoing retainer onboarding).
             </p>
-            <button type="button" onclick="openBookingModal('tier1')" class="btn btn-secondary mt-7 w-full justify-between">
+            <button type="button" onclick="openBooking()" class="btn btn-secondary mt-7 w-full justify-between">
               <span data-i18n="sec4.t1.cta">Book Diagnostic Session</span>
               <span class="arrow" aria-hidden="true">→</span>
             </button>
@@ -1022,7 +976,7 @@
             <p data-i18n="sec4.t2.body" class="t-small mt-5 text-ink2 hyphenate flex-1">
               Continuous bookkeeping review, quarterly AEAT filings (303, 130, 111, 115, 349), annual summaries, DEHú electronic notification monitoring, and direct email support.
             </p>
-            <button type="button" onclick="openBookingModal('tier2')" class="btn btn-primary mt-7 w-full justify-between">
+            <button type="button" onclick="openBooking()" class="btn btn-primary mt-7 w-full justify-between">
               <span data-i18n="sec4.t2.cta">Select Ongoing Compliance</span>
               <span class="arrow" aria-hidden="true">→</span>
             </button>
@@ -1041,7 +995,7 @@
             <p data-i18n="sec4.t3.body" class="t-small mt-5 text-ink2 hyphenate flex-1">
               Full OECD Local/Master File preparation, intra-group financing benchmarking, DCF valuation models, and cross-border restructuring advisory.
             </p>
-            <button type="button" onclick="openBookingModal('tier3')" class="btn btn-secondary mt-7 w-full justify-between">
+            <button type="button" onclick="openBooking()" class="btn btn-secondary mt-7 w-full justify-between">
               <span data-i18n="sec4.t3.cta">Request Corporate Scoping</span>
               <span class="arrow" aria-hidden="true">→</span>
             </button>
@@ -1104,7 +1058,7 @@
             Book a structured 30-minute scoping call or send a brief overview of your situation. All inquiries receive a direct response within one business day.
           </p>
           <div class="mt-8">
-            <button type="button" onclick="openBookingModal('scoping')" class="btn btn-inv justify-center">
+            <button type="button" onclick="openBooking()" class="btn btn-inv justify-center">
               <span data-i18n="sec5.cta">Schedule Consultation</span>
               <span class="arrow" aria-hidden="true">→</span>
             </button>
@@ -1113,8 +1067,8 @@
           <!-- Email -->
           <div class="mt-12 pt-6 border-t border-sigrule">
             <p class="t-label text-sigink2">Email</p>
-            <a href="mailto:nikita@gritsuktax.com" class="mt-3 inline-block text-[clamp(1.625rem,1.2rem+1.8vw,2.625rem)] font-[300] leading-[1.15] tracking-[-0.02em] break-all underline decoration-1 decoration-sigrule underline-offset-[10px] hover:decoration-sigink transition-colors">
-              nikita@gritsuktax.com
+            <a href="mailto:nikita.gritsuk@outlook.com" class="mt-3 inline-block text-[clamp(1.625rem,1.2rem+1.8vw,2.625rem)] font-[300] leading-[1.15] tracking-[-0.02em] break-all underline decoration-1 decoration-sigrule underline-offset-[10px] hover:decoration-sigink transition-colors">
+              nikita.gritsuk@outlook.com
             </a>
             <div class="mt-6 flex flex-wrap gap-3">
               <button
@@ -1181,171 +1135,6 @@
   </footer>
 
   <!-- =====================================================================
-       INTERACTIVE CONSULTATION BOOKING MODAL
-       ===================================================================== -->
-  <div
-    id="booking-modal"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="booking-modal-title"
-    class="fixed inset-0 z-50 hidden overflow-y-auto"
-  >
-    <!-- Backdrop -->
-    <div onclick="closeBookingModal()" class="fixed inset-0 bg-ink/50 backdrop-blur-[2px]"></div>
-
-    <!-- Modal Panel -->
-    <div onclick="if (event.target === this) closeBookingModal()" class="relative min-h-screen flex items-center justify-center p-4 sm:p-8">
-      <div class="relative w-full max-w-2xl bg-surface rounded-[3px] border border-rule shadow-[0_28px_64px_-16px_rgba(31,43,38,0.35)]">
-
-        <!-- Header -->
-        <div class="flex items-start justify-between gap-4 px-6 sm:px-8 pt-6 pb-5 border-b border-rule">
-          <div>
-            <span data-i18n="modal.book.eyebrow" class="t-label text-accent">
-              BARCELONA ADVISORY DESK
-            </span>
-            <h3 id="booking-modal-title" data-i18n="modal.book.title" class="mt-1.5 text-[1.625rem] font-[350] tracking-[-0.015em] leading-tight">
-              Schedule a Consultation
-            </h3>
-          </div>
-          <button
-            type="button"
-            onclick="closeBookingModal()"
-            aria-label="Close Modal"
-            class="-mr-2 inline-flex items-center justify-center w-10 h-10 rounded-[3px] text-ink2 hover:bg-hover hover:text-ink transition-colors cursor-pointer"
-          >
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-
-        <!-- Booking Form View -->
-        <form id="booking-form" onsubmit="handleBookingSubmit(event)" class="px-6 sm:px-8 py-6 space-y-5">
-
-          <div>
-            <label for="booking-tier" data-i18n="modal.book.tierLabel" class="field-label">
-              Engagement Track / Tier
-            </label>
-            <select id="booking-tier" name="tier" onchange="updateIntakeContext()" class="field font-medium">
-              <option value="scoping" data-i18n="modal.book.optScoping">
-                Initial Scoping Call (30 min • General Inquiry)
-              </option>
-              <option value="tier1" data-i18n="modal.book.optTier1">
-                Tier 1 — Diagnostic &amp; Advisory Consultation (€150 / 60 min)
-              </option>
-              <option value="tier2" data-i18n="modal.book.optTier2">
-                Tier 2 — Ongoing Autónomo &amp; Expat Compliance (From €95 / mo)
-              </option>
-              <option value="tier3" data-i18n="modal.book.optTier3">
-                Tier 3 — Corporate Tax &amp; Transfer Pricing Mandate (From €2,500)
-              </option>
-            </select>
-          </div>
-
-          <!-- Dynamic Track Context -->
-          <div id="intake-context-box" class="px-4 py-3 rounded-[3px] bg-paper2 border-l-2 border-accent text-[13.5px] text-ink2 leading-relaxed">
-            <!-- Populated dynamically in EN/ES based on selected tier -->
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label for="booking-name" data-i18n="modal.book.nameLabel" class="field-label">
-                Full Name / Entity
-              </label>
-              <input type="text" id="booking-name" name="name" required placeholder="Alex Mercer / Mercer Holding SL" class="field" />
-            </div>
-            <div>
-              <label for="booking-email" data-i18n="modal.book.emailLabel" class="field-label">
-                Work Email
-              </label>
-              <input type="email" id="booking-email" name="email" required placeholder="name@company.com" class="field" />
-            </div>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label for="booking-format" data-i18n="modal.book.formatLabel" class="field-label">
-                Meeting Format
-              </label>
-              <select id="booking-format" name="format" class="field">
-                <option value="video" data-i18n="modal.book.fmtVideo">Video Conference (Google Meet / Teams)</option>
-                <option value="barcelona" data-i18n="modal.book.fmtBcn">In-Person — Barcelona Office</option>
-                <option value="phone" data-i18n="modal.book.fmtPhone">Direct Telephone Call</option>
-              </select>
-            </div>
-            <div>
-              <label for="booking-window" data-i18n="modal.book.windowLabel" class="field-label">
-                Preferred Window (CET)
-              </label>
-              <select id="booking-window" name="window" class="field">
-                <option value="morning" data-i18n="modal.book.winMorning">Morning (09:30 – 13:00 CET)</option>
-                <option value="afternoon" data-i18n="modal.book.winAfternoon">Afternoon (15:00 – 18:30 CET)</option>
-              </select>
-            </div>
-          </div>
-
-          <div>
-            <label for="booking-notes" data-i18n="modal.book.notesLabel" class="field-label">
-              Brief Overview of Your Situation
-            </label>
-            <textarea
-              id="booking-notes"
-              name="notes"
-              rows="3"
-              required
-              data-i18n-placeholder="modal.book.notesPlaceholder"
-              placeholder="Summarize your Spanish tax residency status, autónomo/SL requirements, or intercompany transaction scope..."
-              class="field resize-y"
-            ></textarea>
-          </div>
-
-          <!-- RGPD Consent -->
-          <label class="flex items-start gap-3 cursor-pointer select-none">
-            <input type="checkbox" required class="check-accent mt-1 w-4 h-4 shrink-0" />
-            <span data-i18n="modal.book.gdpr" class="text-[12.5px] text-ink3 leading-relaxed">
-              I consent to the processing of my personal data by Nikita Gritsuk solely to respond to this advisory inquiry in accordance with the Privacy Policy (RGPD).
-            </span>
-          </label>
-
-          <!-- Actions -->
-          <div class="pt-2 flex items-center justify-end gap-3">
-            <button type="button" onclick="closeBookingModal()" data-i18n="modal.book.cancel" class="btn btn-quiet justify-center">
-              Cancel
-            </button>
-            <button type="submit" data-i18n="modal.book.submit" class="btn btn-primary justify-center">
-              Confirm Request
-            </button>
-          </div>
-        </form>
-
-        <!-- Booking Confirmation State (Hidden until submitted) -->
-        <div id="booking-success" class="hidden px-6 sm:px-10 py-10 text-center">
-          <div class="w-12 h-12 mx-auto rounded-full bg-[rgba(42,94,69,0.08)] border border-accent/30 text-accent flex items-center justify-center">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-          <h4 data-i18n="modal.book.successTitle" class="mt-5 text-[1.625rem] font-[350] tracking-[-0.015em]">
-            Consultation Request Logged
-          </h4>
-          <p data-i18n="modal.book.successBody" class="mt-3 t-small text-ink2 max-w-md mx-auto">
-            Thank you. Your inquiry has been routed directly to Nikita Gritsuk in Barcelona. You will receive a calendar invitation and confirmation within one business day.
-          </p>
-          <div id="booking-ref-box" class="mt-5 inline-flex items-center px-3 py-1.5 rounded-[3px] border border-rule bg-paper text-[12.5px] font-semibold tracking-[0.06em] text-ink2 tabular-nums">
-            REF: BCN-TAX-2026
-          </div>
-          <div class="pt-7">
-            <button type="button" onclick="closeBookingModal()" data-i18n="modal.book.done" class="btn btn-secondary justify-center">
-              Return to Page
-            </button>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- =====================================================================
        SPANISH LSSI-CE & RGPD LEGAL INFORMATION MODAL
        ===================================================================== -->
   <div
@@ -1401,7 +1190,7 @@
     /**
      * Complete EN / ES Translation Dictionary
      * Exact copy aligned with Nikita Gritsuk's Barcelona Tax & Transfer Pricing positioning.
-     * (Additions vs. source: "a11y.skip", "toc.*", "nav.cases", "cases.*", "writing.*"; booking success copy rewritten for the email hand-off.)
+     * (Additions vs. source: "a11y.skip", "toc.*", "nav.cases", "cases.*", "writing.*". Booking form removed: buttons open Calendly.)
      */
     const TRANSLATIONS = {
       en: {
@@ -1532,31 +1321,6 @@
         "footer.cookies": "Cookie Policy",
         "footer.rights": "All rights reserved.",
 
-        // Booking Modal
-        "modal.book.eyebrow": "BARCELONA ADVISORY DESK",
-        "modal.book.title": "Schedule a Consultation",
-        "modal.book.tierLabel": "Engagement Track / Tier",
-        "modal.book.optScoping": "Initial Scoping Call (30 min • General Inquiry)",
-        "modal.book.optTier1": "Tier 1 — Diagnostic & Advisory Consultation (€150 / 60 min)",
-        "modal.book.optTier2": "Tier 2 — Ongoing Autónomo & Expat Compliance (From €95 / mo)",
-        "modal.book.optTier3": "Tier 3 — Corporate Tax & Transfer Pricing Mandate (From €2,500)",
-        "modal.book.nameLabel": "Full Name / Entity",
-        "modal.book.emailLabel": "Work Email",
-        "modal.book.formatLabel": "Meeting Format",
-        "modal.book.fmtVideo": "Video Conference (Google Meet / Teams)",
-        "modal.book.fmtBcn": "In-Person — Barcelona Office",
-        "modal.book.fmtPhone": "Direct Telephone Call",
-        "modal.book.windowLabel": "Preferred Window (CET)",
-        "modal.book.winMorning": "Morning (09:30 – 13:00 CET)",
-        "modal.book.winAfternoon": "Afternoon (15:00 – 18:30 CET)",
-        "modal.book.notesLabel": "Brief Overview of Your Situation",
-        "modal.book.notesPlaceholder": "Summarize your Spanish tax residency status, autónomo/SL requirements, or intercompany transaction scope...",
-        "modal.book.gdpr": "I consent to the processing of my personal data by Nikita Gritsuk solely to respond to this advisory inquiry in accordance with the Privacy Policy (RGPD).",
-        "modal.book.cancel": "Cancel",
-        "modal.book.submit": "Confirm Request",
-        "modal.book.successTitle": "One Last Step: Send the Email",
-        "modal.book.successBody": "Your email app has opened with your request already written. Press send and you will receive a reply within one business day. If nothing opened, write to nikita@gritsuktax.com.",
-        "modal.book.done": "Return to Page",
         "modal.legal.close": "Close"
       },
 
@@ -1688,50 +1452,7 @@
         "footer.cookies": "Política de Cookies",
         "footer.rights": "Todos los derechos reservados.",
 
-        // Modal de Reserva
-        "modal.book.eyebrow": "DESPACHO DE ASESORÍA • BARCELONA",
-        "modal.book.title": "Agendar Consulta",
-        "modal.book.tierLabel": "Modalidad / Nivel de Servicio",
-        "modal.book.optScoping": "Llamada Inicial de Valoración (30 min • Consulta General)",
-        "modal.book.optTier1": "Nivel 1 — Sesión de Diagnóstico y Estrategia Fiscal (150 € / 60 min)",
-        "modal.book.optTier2": "Nivel 2 — Gestión Fiscal Continua para Autónomos (Desde 95 € / mes)",
-        "modal.book.optTier3": "Nivel 3 — Proyectos Corporativos y Precios de Transferencia (Desde 2.500 €)",
-        "modal.book.nameLabel": "Nombre Completo / Empresa",
-        "modal.book.emailLabel": "Correo Electrónico Profesional",
-        "modal.book.formatLabel": "Formato de Reunión",
-        "modal.book.fmtVideo": "Videoconferencia (Google Meet / Teams)",
-        "modal.book.fmtBcn": "Presencial — Oficina Barcelona",
-        "modal.book.fmtPhone": "Llamada Telefónica Directa",
-        "modal.book.windowLabel": "Franja Horaria Preferida (CET)",
-        "modal.book.winMorning": "Mañana (09:30 – 13:00 CET)",
-        "modal.book.winAfternoon": "Tarde (15:00 – 18:30 CET)",
-        "modal.book.notesLabel": "Breve Resumen de tu Situación",
-        "modal.book.notesPlaceholder": "Indica tu situación de residencia fiscal en España, necesidades de alta como autónomo/SL o alcance de operaciones vinculadas...",
-        "modal.book.gdpr": "Consiento el tratamiento de mis datos personales por parte de Nikita Gritsuk exclusivamente para atender esta solicitud de asesoramiento conforme a la Política de Privacidad (RGPD).",
-        "modal.book.cancel": "Cancelar",
-        "modal.book.submit": "Confirmar Solicitud",
-        "modal.book.successTitle": "Último Paso: Envía el Correo",
-        "modal.book.successBody": "Se ha abierto tu aplicación de correo con la solicitud ya redactada. Pulsa enviar y recibirás respuesta en menos de un día laborable. Si no se ha abierto nada, escribe a nikita@gritsuktax.com.",
-        "modal.book.done": "Volver a la Página",
         "modal.legal.close": "Cerrar"
-      }
-    };
-
-    /**
-     * Dynamic Intake Context Guidance per Selected Tier (EN & ES)
-     */
-    const INTAKE_CONTEXT = {
-      en: {
-        scoping: "Structured 30-minute preliminary call to determine whether your situation requires Spanish tax compliance onboarding or a corporate transfer pricing mandate.",
-        tier1: "Includes a 60-minute deep-dive session plus a written action roadmap. The €150 fee (excl. IVA) is credited in full if you onboard onto an ongoing monthly retainer.",
-        tier2: "Ideal for registered autónomos, remote founders, and expat professionals needing quarterly AEAT filings (303, 130, 111, 115, 349) and DEHú inbox supervision.",
-        tier3: "Tailored for corporate groups and CFOs requiring OECD Master/Local Files, intercompany loan interest benchmarking, DCF valuations, or cross-border restructuring."
-      },
-      es: {
-        scoping: "Llamada preliminar estructurada de 30 minutos para evaluar si tu caso requiere gestión fiscal continua en España o un proyecto corporativo de precios de transferencia.",
-        tier1: "Incluye sesión técnica de 60 minutos y hoja de ruta escrita. El importe de 150 € (sin IVA) se descuenta íntegramente si contratas un plan mensual recurrente.",
-        tier2: "Diseñado para autónomos, fundadores internacionales y expatriados que precisan presentaciones trimestrales ante la AEAT (303, 130, 111, 115, 349) y control de DEHú.",
-        tier3: "Dirigido a grupos empresariales y CFO que requieren Master/Local File OCDE, benchmarking de préstamos intragrupo, valoraciones DCF o reestructuración transfronteriza."
       }
     };
 
@@ -1744,7 +1465,7 @@
           title: "Legal Notice (Aviso Legal — LSSI-CE)",
           html: `
             <p><strong>1. General Information (Law 34/2002 — LSSI-CE):</strong> In compliance with Article 10 of Spanish Law 34/2002, of July 11, on Information Society Services and Electronic Commerce, users are informed that this website is operated by <strong>Nikita Gritsuk</strong>, independent Tax Advisor and Transfer Pricing Consultant (<em>Asesor Fiscal y Consultor Tributario</em>), based in Barcelona, Spain. NIE: Z0725668T. Professional address: Carrer de l'Estartit 5, 3-2, 08020 Barcelona, Spain.</p>
-            <p><strong>2. Contact Details:</strong> Professional email: <a href="mailto:nikita@gritsuktax.com" class="link-quiet">nikita@gritsuktax.com</a> | Telephone: +34 613 612 186 | +7 903 178 88 29.</p>
+            <p><strong>2. Contact Details:</strong> Professional email: <a href="mailto:nikita.gritsuk@outlook.com" class="link-quiet">nikita.gritsuk@outlook.com</a> | Telephone: +34 613 612 186 | +7 903 178 88 29.</p>
             <p><strong>3. Scope of Professional Services:</strong> Services rendered through this practice comprise tax advisory, administrative tax compliance representation before the Spanish Tax Agency (AEAT), financial valuation modeling, and transfer pricing documentation. Content published on this website is strictly informational and does not constitute binding legal or tax advice until a formal engagement letter is executed.</p>
             <p><strong>4. Intellectual Property:</strong> All texts, analytical frameworks, and visual design elements on this domain are protected by Spanish and European intellectual property regulations.</p>
           `
@@ -1753,9 +1474,9 @@
           title: "Privacy Policy (RGPD & LOPDGDD)",
           html: `
             <p><strong>1. Data Controller:</strong> Nikita Gritsuk (Barcelona, Spain) acts as Data Controller in accordance with Regulation (EU) 2016/679 (GDPR / RGPD) and Spanish Organic Law 3/2018 (LOPDGDD).</p>
-            <p><strong>2. Purpose & Legal Basis:</strong> Personal data submitted via the consultation booking modal or direct email is processed exclusively to evaluate your tax/transfer pricing inquiry, schedule consultations, and execute pre-contractual or contractual advisory mandates (Art. 6.1.a and 6.1.b GDPR).</p>
+            <p><strong>2. Purpose & Legal Basis:</strong> Personal data submitted when you book through Calendly or write by email is processed exclusively to evaluate your tax/transfer pricing inquiry, schedule consultations, and execute pre-contractual or contractual advisory mandates (Art. 6.1.a and 6.1.b GDPR).</p>
             <p><strong>3. Confidentiality & Retention:</strong> All tax and corporate information shared is treated under strict professional confidentiality. Data is retained only for the duration necessary to fulfill the advisory inquiry or comply with statutory Spanish tax and mercantile retention periods.</p>
-            <p><strong>4. Data Subject Rights:</strong> You may exercise your rights of access, rectification, erasure, restriction, objection, and portability at any time by writing to <a href="mailto:nikita@gritsuktax.com" class="link-quiet">nikita@gritsuktax.com</a>.</p>
+            <p><strong>4. Data Subject Rights:</strong> You may exercise your rights of access, rectification, erasure, restriction, objection, and portability at any time by writing to <a href="mailto:nikita.gritsuk@outlook.com" class="link-quiet">nikita.gritsuk@outlook.com</a>.</p>
           `
         },
         cookies: {
@@ -1772,7 +1493,7 @@
           title: "Aviso Legal (Ley 34/2002 — LSSI-CE)",
           html: `
             <p><strong>1. Datos Identificativos:</strong> En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se informa que el titular de este sitio web es <strong>Nikita Gritsuk</strong>, Asesor Fiscal y Consultor Tributario independiente con NIE Z0725668T y domicilio profesional en Carrer de l'Estartit 5, 3-2, 08020 Barcelona, España.</p>
-            <p><strong>2. Contacto Profesional:</strong> Correo electrónico: <a href="mailto:nikita@gritsuktax.com" class="link-quiet">nikita@gritsuktax.com</a> | Teléfono: +34 613 612 186 | +7 903 178 88 29.</p>
+            <p><strong>2. Contacto Profesional:</strong> Correo electrónico: <a href="mailto:nikita.gritsuk@outlook.com" class="link-quiet">nikita.gritsuk@outlook.com</a> | Teléfono: +34 613 612 186 | +7 903 178 88 29.</p>
             <p><strong>3. Naturaleza de los Servicios:</strong> Los servicios ofrecidos comprenden el asesoramiento tributario, gestión y presentación telemática de declaraciones ante la Agencia Estatal de Administración Tributaria (AEAT), modelización financiera y documentación de precios de transferencia. La información publicada en esta web tiene carácter meramente informativo y no constituye asesoramiento vinculante sin la previa suscripción de una hoja de encargo profesional.</p>
             <p><strong>4. Propiedad Intelectual:</strong> Todos los contenidos, textos, estructura y diseño gráfico de este sitio web están protegidos por la normativa española y europea de propiedad intelectual.</p>
           `
@@ -1781,9 +1502,9 @@
           title: "Política de Privacidad (RGPD y LOPDGDD)",
           html: `
             <p><strong>1. Responsable del Tratamiento:</strong> Nikita Gritsuk (Barcelona, España), conforme al Reglamento (UE) 2016/679 General de Protección de Datos (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD).</p>
-            <p><strong>2. Finalidad y Base Jurídica:</strong> Los datos personales facilitados mediante el formulario de solicitud de consulta o correo electrónico se tratan exclusivamente para analizar su consulta fiscal o corporativa, coordinar reuniones y ejecutar medidas precontractuales o contractuales (arts. 6.1.a y 6.1.b RGPD).</p>
+            <p><strong>2. Finalidad y Base Jurídica:</strong> Los datos personales facilitados al reservar a través de Calendly o por correo electrónico se tratan exclusivamente para analizar su consulta fiscal o corporativa, coordinar reuniones y ejecutar medidas precontractuales o contractuales (arts. 6.1.a y 6.1.b RGPD).</p>
             <p><strong>3. Confidencialidad y Conservación:</strong> Toda la documentación e información tributaria facilitada está sujeta a estricta confidencialidad profesional. Los datos se conservarán únicamente durante el tiempo necesario para atender la solicitud y cumplir con los plazos legales de prescripción tributaria y mercantil en España.</p>
-            <p><strong>4. Derechos de los Interesados:</strong> Puede ejercer sus derechos de acceso, rectificación, supresión, limitación, oposición y portabilidad dirigiendo una comunicación a <a href="mailto:nikita@gritsuktax.com" class="link-quiet">nikita@gritsuktax.com</a>.</p>
+            <p><strong>4. Derechos de los Interesados:</strong> Puede ejercer sus derechos de acceso, rectificación, supresión, limitación, oposición y portabilidad dirigiendo una comunicación a <a href="mailto:nikita.gritsuk@outlook.com" class="link-quiet">nikita.gritsuk@outlook.com</a>.</p>
           `
         },
         cookies: {
@@ -1835,9 +1556,6 @@
       const copyBtn = document.getElementById('copy-email-btn');
       if (copyBtn) copyBtn.classList.remove('is-copied');
 
-      // Refresh dynamic intake context banner
-      updateIntakeContext();
-
       // Refresh legal modal if currently open
       if (activeLegalType) {
         renderLegalModalContent(activeLegalType);
@@ -1867,87 +1585,13 @@
     }
 
     /**
-     * Consultation Booking Modal Controls
+     * Booking: every "book / schedule" button opens the Calendly page in a new tab.
+     * A plain link is used instead of Calendly's embedded widget so this site sets no third-party cookies.
      */
-    function openBookingModal(tierKey = 'scoping') {
-      const modal = document.getElementById('booking-modal');
-      const form = document.getElementById('booking-form');
-      const success = document.getElementById('booking-success');
-      const select = document.getElementById('booking-tier');
+    const CALENDLY_URL = 'https://calendly.com/nikita_gritsuk_8472';
 
-      lastFocusedElement = document.activeElement;
-
-      form.classList.remove('hidden');
-      success.classList.add('hidden');
-
-      if (select && tierKey) {
-        select.value = tierKey;
-      }
-      updateIntakeContext();
-
-      modal.classList.remove('hidden');
-      document.body.classList.add('overflow-hidden');
-
-      if (select) select.focus({ preventScroll: true });
-    }
-
-    function closeBookingModal() {
-      const modal = document.getElementById('booking-modal');
-      if (modal.classList.contains('hidden')) return;
-      modal.classList.add('hidden');
-      document.body.classList.remove('overflow-hidden');
-      if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
-        lastFocusedElement.focus({ preventScroll: true });
-      }
-    }
-
-    function updateIntakeContext() {
-      const select = document.getElementById('booking-tier');
-      const box = document.getElementById('intake-context-box');
-      if (!select || !box) return;
-
-      const selectedVal = select.value || 'scoping';
-      box.textContent = INTAKE_CONTEXT[currentLang][selectedVal] || '';
-    }
-
-    function handleBookingSubmit(event) {
-      event.preventDefault();
-      const form = document.getElementById('booking-form');
-      const success = document.getElementById('booking-success');
-      const refBox = document.getElementById('booking-ref-box');
-      const dict = TRANSLATIONS[currentLang];
-      const value = (id) => document.getElementById(id).value.trim();
-      const selectedText = (id) => {
-        const el = document.getElementById(id);
-        return el.options[el.selectedIndex].textContent.trim();
-      };
-
-      const tier = value('booking-tier').toUpperCase();
-      const ref = `BCN-${tier}-${Math.floor(1000 + Math.random() * 9000)}`;
-      refBox.textContent = `REF: ${ref}`;
-
-      // The site has no server: the request is handed to the visitor's own email app, ready to send.
-      const lines = [
-        `${dict['modal.book.tierLabel']}: ${selectedText('booking-tier')}`,
-        `${dict['modal.book.nameLabel']}: ${value('booking-name')}`,
-        `${dict['modal.book.emailLabel']}: ${value('booking-email')}`,
-        `${dict['modal.book.formatLabel']}: ${selectedText('booking-format')}`,
-        `${dict['modal.book.windowLabel']}: ${selectedText('booking-window')}`,
-        '',
-        `${dict['modal.book.notesLabel']}:`,
-        value('booking-notes'),
-        '',
-        `REF: ${ref}`
-      ];
-      const subject = `${dict['modal.book.title']} — ${ref}`;
-      const mailto = 'mailto:nikita@gritsuktax.com'
-        + '?subject=' + encodeURIComponent(subject)
-        + '&body=' + encodeURIComponent(lines.join('\r\n'));
-
-      form.classList.add('hidden');
-      success.classList.remove('hidden');
-      form.reset();
-      window.location.href = mailto;
+    function openBooking() {
+      window.open(CALENDLY_URL, '_blank', 'noopener');
     }
 
     /**
@@ -1988,7 +1632,7 @@
      * Clipboard Copy Utility (using execCommand for iFrame compatibility)
      */
     function copyEmailToClipboard() {
-      const email = 'nikita@gritsuktax.com';
+      const email = 'nikita.gritsuk@outlook.com';
       const tempInput = document.createElement('input');
       tempInput.value = email;
       document.body.appendChild(tempInput);
@@ -2041,7 +1685,6 @@
      */
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
-        closeBookingModal();
         closeLegalModal();
         closeMobileMenu();
       }
